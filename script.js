@@ -74,23 +74,24 @@ let song5 = {
 let songs = [song1, song2, song3, song4, song5];
 
 
+
 //REFACTOR LOOPS DAY 
 // task 15: update your `addSongInfo` function so the input values are saved in as values in a new object.
 // task 16: update your `.push()` so the input object is added to your array of objects.
 // task 17: update your loops based on your new array of objects.
-  songs.forEach(function(song) {
-    displayImage.insertAdjacentHTML("beforeend",
-      `<p><img src=${song.imageUrl}></p>`)
+  // songs.forEach(function(song) {
+  //   displayImage.insertAdjacentHTML("beforeend",
+  //     `<p><img src=${song.imageUrl}></p>`)
     
-    displaySong.insertAdjacentHTML("beforeend",
-      `<p> ${song.songName} </p>`)
+  //   displaySong.insertAdjacentHTML("beforeend",
+  //     `<p> ${song.songName} </p>`)
     
-    displayArtist.insertAdjacentHTML("beforeend",
-      `<p> ${song.artistName} </p>`)
+  //   displayArtist.insertAdjacentHTML("beforeend",
+  //     `<p> ${song.artistName} </p>`)
     
-    displayLink.insertAdjacentHTML("beforeend",
-      `<p> ${song.songLink} </p>`)
-  })
+  //   displayLink.insertAdjacentHTML("beforeend",
+  //     `<a href> ${song.songLink} </a>`)
+  // })
 
 
 
@@ -103,15 +104,23 @@ function addSongInfo() {
   let artistInput = artist.value;
   let linkInput = songLink.value;
 
+
   // task 10: use `.push()` to add each input value to the correct array.
-  pics.push(picInput);
-  songNames.push(songInput); 
-  artistsNames.push(artistInput); 
-  songLinks.push(linkInput);
-  console.log(pics);
+  // pics.push(picInput);
+  // songNames.push(songInput); 
+  // artistsNames.push(artistInput); 
+  // songLinks.push(linkInput);
+  // console.log(pics);
+  
+  let newSong = {
+    imageUrl: picInput,
+    songName: songInput,
+    artistName: artistInput,
+    songLink: linkInput
+  };
+    songs.push(newSong);
 
 }
-
 
 
 
@@ -129,25 +138,18 @@ function emptyDisplay() {
 function displaySongInfo() {
 
   // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
-  pics.forEach(function(pic) {
+songs.forEach(function(song) {
     displayImage.insertAdjacentHTML("beforeend",
-      `<p><img src=${pic}></p>`)
-  })
-
-
-  songNames.forEach(function(song) {
+      `<p><img src=${song.imageUrl}></p>`)
+    
     displaySong.insertAdjacentHTML("beforeend",
-      `<p> ${song} </p>`)
-  })
-
-  artistsNames.forEach(function(artist) {
+      `<p> ${song.songName} </p>`)
+    
     displayArtist.insertAdjacentHTML("beforeend",
-      `<p> ${artist} </p>`)
-  })
-
-  songLinks.forEach(function(link) {
+      `<p> ${song.artistName} </p>`)
+    
     displayLink.insertAdjacentHTML("beforeend",
-      `<p> ${link} </p>`)
+      `<a href=${song.songLink}>Song Link</a>`)
   })
 };
 

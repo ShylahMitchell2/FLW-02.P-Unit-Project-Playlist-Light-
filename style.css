@@ -8,14 +8,14 @@ h1 {
   font-family: 'Itim', cursive;
 }
 .WO2{
-padding-left: 208px;
+padding-left: 590px;
 }
 .display {
   display: flex;
   justify-content: space-around;
-  border-top: 5px solid black;
+  border-top: 10px solid black;
   border-bottom: 5px solid black;
-  padding: 25px
+  padding: 45px
 }
 
 .heading {
@@ -80,7 +80,7 @@ button {
 }
 
 body {
-  background-color: #DED9E2;
+  background-color: #d8c7e6;
   color: black;
   font-family: 'Itim', cursive;
 
